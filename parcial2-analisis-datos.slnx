@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Dominio/Dominio.csproj" Id="602d5a09-8005-40e4-8570-e030510bcd37" />
+  <Project Path="Negocio/Negocio.csproj" Id="4a5777a9-0e65-4b6c-832d-04b29937e451" />
+  <Project Path="WinFormsApp/WinFormsApp.csproj" Id="6b1f3e27-e07b-43d9-a32e-658ed8c08f68" />
+</Solution>
