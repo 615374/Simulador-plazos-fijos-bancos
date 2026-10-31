@@ -41,7 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco.cs" />
+    <Compile Include="Modalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recomendacion.cs" />
+    <Compile Include="ResultadoInversion.cs" />
+    <Compile Include="SolicitudInversion.cs" />
+    <Compile Include="TasaAnual.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
