@@ -33,11 +33,12 @@ Repositorio: https://github.com/MarceloCarabajal/parcial2-analisis-datos
 
 La recomendación es el mayor capital final. Si hay empate, se listan las opciones empatadas.
 
-Caso de prueba: capital 850000. Provincia 40, 42 y 38 (promedio 40%). Nación 35, 36 y 37 (promedio 36%).
+Caso de prueba, con los tres bancos y capital 850000:
 
-- Provincia anual 1.190.000,00 / trimestral 1.244.485,00 / mensual 1.259.807,52
-- Nación anual 1.156.000,00 / trimestral 1.199.844,37 / mensual 1.211.896,75
-- Recomendación: Banco Provincia, modalidad mensual
+- Provincia 40, 42 y 38 (promedio 40%): anual 1.190.000,00 / trimestral 1.244.485,00 / mensual 1.259.807,52
+- Nación 35, 36 y 37 (promedio 36%): anual 1.156.000,00 / trimestral 1.199.844,37 / mensual 1.211.896,75
+- Hipotecario 45, 30 y 33 (promedio 36%): los mismos montos que Nación
+- Recomendación: Banco Provincia, modalidad mensual. Nación e Hipotecario empatan entre sí y quedan por debajo.
 
 ## Ramas
 
