@@ -1,13 +1,27 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dominio
+﻿namespace Dominio
 {
-    internal class Modalidad
+    public enum Modalidad
     {
+        Anual,
+        Trimestral,
+        Mensual
+    }
+
+    public static class NombresModalidad
+    {
+        public static string De(Modalidad modalidad)
+        {
+            switch (modalidad)
+            {
+                case Modalidad.Anual:
+                    return "Anual";
+                case Modalidad.Trimestral:
+                    return "Trimestral";
+                case Modalidad.Mensual:
+                    return "Mensual";
+                default:
+                    return modalidad.ToString();
+            }
+        }
     }
 }
