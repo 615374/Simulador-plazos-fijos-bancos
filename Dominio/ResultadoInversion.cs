@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dominio
+﻿namespace Dominio
 {
-    internal class ResultadoInversion
+    public class ResultadoInversion
     {
+        public Banco Banco { get; set; }
+        public Modalidad Modalidad { get; set; }
+        public decimal TasaPromedioPorcentaje { get; set; }
+        public decimal CapitalInicial { get; set; }
+        public decimal CapitalFinal { get; set; }
+        public decimal Rendimiento { get; set; }
     }
 }
