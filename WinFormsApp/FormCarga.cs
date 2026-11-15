@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -107,6 +110,51 @@ namespace WinFormsApp
             }
 
             MessageBox.Show("¡Datos cargados y validados correctamente!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            List<TasaAnual> listaTasas = new List<TasaAnual>();
+
+         
+            for (int i = 0; i < 3; i++)
+            {
+                decimal.TryParse(txtProvincia[i].Text, out decimal tasaVal);
+                listaTasas.Add(new TasaAnual { Banco = Banco.Provincia, Anio = i + 1, TasaPorcentaje = tasaVal });
+            }
+          
+            for (int i = 0; i < 3; i++)
+            {
+                decimal.TryParse(txtNacion[i].Text, out decimal tasaVal);
+                listaTasas.Add(new TasaAnual { Banco = Banco.Nacion, Anio = i + 1, TasaPorcentaje = tasaVal });
+            }
+           
+            for (int i = 0; i < 3; i++)
+            {
+                decimal.TryParse(txtHipotecario[i].Text, out decimal tasaVal);
+                listaTasas.Add(new TasaAnual { Banco = Banco.Hipotecario, Anio = i + 1, TasaPorcentaje = tasaVal });
+            }
+
+            
+            SolicitudInversion solicitud = new SolicitudInversion
+            {
+                Capital = capitalInicial,
+                Tasas = listaTasas
+            };
+
+            try
+            {
+                
+                SimuladorNegocio simulador = new SimuladorNegocio();
+                List<ResultadoInversion> resultados = simulador.Simular(solicitud);
+                List<Recomendacion> recomendaciones = simulador.Recomendar(resultados);
+
+                
+                FormResultados formRes = new FormResultados(resultados, recomendaciones);
+                formRes.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al simular: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
